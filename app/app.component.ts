@@ -1,8 +1,9 @@
 import {Component} from 'angular2/core';
-import {RouteConfig} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {AlbumsComponent} from './albums.component';
 import {ContactComponent} from './contact.component';
-import {RouterOutlet} from 'angular2/router';
+//import {RouterOutlet} from 'angular2/router';
+//import {RouterLink} from 'angular2/router';
 
 @RouteConfig([
 	{
@@ -25,7 +26,7 @@ import {RouterOutlet} from 'angular2/router';
 @Component({
     selector: 'my-app',
     templateUrl: '/app/app.component.html',
-    directives: [RouterOutlet]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {
 }
