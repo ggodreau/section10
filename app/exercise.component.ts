@@ -4,8 +4,10 @@ import {ArchivesComponent} from './archives.component';
 import {HomeComponent} from './home.component';
 
 @RouteConfig([
-    { path: '/', name: 'Home', component: HomeComponent},
-    { path: '/*other', name: 'Other', redirectTo: ['Home'] }
+    { path: '/', name: 'Home', component: HomeComponent, useAsDefault: true },
+    { path: '/archives', name: 'Archives', component: ArchivesComponent },
+    { path: '/*other', name: 'Other', redirectTo: ['Home'] },
+    //    { path: '/', name: 'Exercise', component: ExerciseComponent }
 )]
     //    { path: '/archives/:year/:id', name: 'Archives', component: 'ArchivesComponent'})]
     
@@ -14,7 +16,10 @@ import {HomeComponent} from './home.component';
     template: `
         <ul>
             <li>
-                <a [routerLink]="['Home']">click me</a>
+                <a [routerLink]="['Home']">home</a>
+            </li>
+            <li>
+                <a [routerLink]="['Archives']">archives</a>
             </li>
         </ul>
         <router-outlet></router-outlet>
