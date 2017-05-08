@@ -1,9 +1,9 @@
 import {Component, OnInit} from 'angular2/core';
-import {RouteParams} from 'angular2/router';
+import {Router, RouteParams} from 'angular2/router';
 
 @Component({
     template: `
-        <h1>Archives</h1>
+        <h1>Archives Component</h1>
         <div *ngIf="isLoading">
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
@@ -20,7 +20,8 @@ export class ArchivesComponent implements OnInit {
     ){}
     
     ngOnInit(){
-        console.log(this._routeParams.get("id"))
+        console.log(this._routeParams.get("id")),
+	console.log("hello world?")
             });
     }
 }

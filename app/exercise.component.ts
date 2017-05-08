@@ -1,52 +1,25 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {ArchivesComponent} from './archives.component';
-//import {AlbumComponent} from './album.component';
-//import {ContactComponent} from './contact.component';
-//import {RouterOutlet} from 'angular2/router';
-//import {RouterLink} from 'angular2/router';
+import {HomeComponent} from './home.component';
 
 @RouteConfig([
-//	{
-//	path: '/albums', 
-//	name: 'Albums',
-//	component: AlbumsComponent,
-//	useAsDefault: true
-//	},
-	{
-	path: '/archives/:year/:id',
-	name: 'Archives',
-	component: ArchivesComponent
-	}
-//	{
-//	path: '/contact',
-//	name: 'Contact',
-//	component: ContactComponent
-//	},
-//	{
-//	path: '/*other',
-//	name: 'Other',
-//	redirectTo: ['Albums']
-//	}
-])
+    { path: '/', name: 'Home', component: HomeComponent},
+    { path: '/*other', name: 'Other', redirectTo: ['Home'] }
+)]
+    //    { path: '/archives/:year/:id', name: 'Archives', component: 'ArchivesComponent'})]
+    
 @Component({
     selector: 'exercise',
-    templateUrl: '/app/exercise.component.html',
+    template: `
+        <ul>
+            <li>
+                <a [routerLink]="['Home']">click me</a>
+            </li>
+        </ul>
+        <router-outlet></router-outlet>
+    `,
     directives: [ROUTER_DIRECTIVES]
 })
 export class ExerciseComponent {
-	archives = [
-		{
-		year: '2016',
-		id: '1'
-		},
-		{
-		year: '2016',
-		id: '2'
-		},
-		{
-		year: '2017',
-		id: '3'
-		}]
-
 }
